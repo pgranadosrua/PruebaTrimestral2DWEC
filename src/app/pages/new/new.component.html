@@ -1,0 +1,19 @@
+<form [formGroup]="miFormulario" (ngSubmit)="alEnviar()">
+  <label for="title">Título:</label>
+  <input type="text" id="title" name="title" formControlName="title" />
+  <br /><br />
+
+  <label for="channel">Canal:</label>
+  <input type="text" id="channel" name="channel" formControlName="channel" />
+  <br /><br />
+
+  <label for="rating">Puntuación (0-10):</label>
+  <input type="number" id="rating" name="rating" formControlName="rating" />
+  <br /><br />
+
+  <button type="submit" [disabled]="!formularioValido">Enviar</button>
+</form>
+
+@if (serieNueva) {
+  <p>Se ha creado la serie con ID: {{ serieNueva.id }}</p>
+}
